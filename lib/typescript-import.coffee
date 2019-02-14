@@ -47,11 +47,11 @@ module.exports = TypescriptImport =
     editor.selectWordsContainingCursors();
     selection = editor.getSelectedText().trim()
     editor.setCursorBufferPosition(position);
-    symbol = @index[selection]
-    if symbol and selection
-      atom.workspace.open(symbol.path)
-    else
-      atom.commands.dispatch(document.querySelector('atom-text-editor'), 'typescript:go-to-declaration')
+    # symbol = @index[selection]
+    # if symbol and selection
+    #   atom.workspace.open(symbol.path)
+    # else
+    atom.commands.dispatch(document.querySelector('atom-text-editor'), 'typescript:go-to-declaration')
 
 
   addImportStatement: (importedSymbol, relativePath, isDefaultImport) ->
